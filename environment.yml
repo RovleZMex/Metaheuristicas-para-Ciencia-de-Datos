@@ -1,0 +1,35 @@
+name: sistemas_complejos
+channels:
+  - defaults
+  - conda-forge
+dependencies:
+  # Python
+  - python=3.10
+  
+  # Bibliotecas científicas básicas
+  - numpy=1.23        # compatible con nolds
+  - scipy=1.9
+  - pandas=1.5
+  - matplotlib=3.7
+  - seaborn=0.12
+  - scikit-learn=1.2
+  
+  # Modelos estadísticos y series de tiempo
+  - statsmodels=0.13.5  # compatible con numpy<1.24
+  - statsmodels
+  
+  # Para animaciones y visualización 3D
+  - ipywidgets
+  - notebook
+  
+  # Librerías no estándar de análisis no lineal y financieros
+  - pip
+  - pip:
+      - nolds==0.5.2    # análisis no lineal (Lyapunov, D2)
+      - yfinance        # para datos financieros reales
+      - plotly          # opcional, si quieres visualizaciones interactivas
+
+# Comentarios:
+# 1. Las versiones están fijadas para asegurar compatibilidad con nolds y statsmodels.
+# 2. Se usa Python 3.10 para equilibrar estabilidad y compatibilidad.
+# 3. Al crear el entorno, los notebooks podrán ejecutar todos los ejemplos sin errores de MachAr o importlib.resources.
